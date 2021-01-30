@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Encoption</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
+</head>
+<style>
+  .pad{
+    padding-top: 10%;
+  }
+  a{
+    font-size: 2rem !important;
+  }
+</style>
+<body>
+  <!-- Image and text -->
+  <nav class="navbar navbar-light bg-primary">
+    <div class="container">
+      <a class="navbar-brand text-white" href="/">
+        Encoption
+      </a>
+    </div>
+  </nav>
+  <div class="container mt-3 mb-5 text-center mx-auto pad d-block" style="max-width: 50%;">
+    <form action="/show" method="POST">
+      <div class="form-group">
+        <input type="text" class="form-control mt-3 col-8" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Your Name" name="name">
+      </div>
+      <button type="submit" class="btn btn-primary mt-3">Search</button>
+    </form>
+      {% for item in data %}
+      <div class="card text-dark mt-5 text-center mx-auto d-block bg-warning mb-3" style="max-width: 25rem;">
+        <h5 class="card-header">Hi, {{name}} !</h5>
+        <div class="card-body">
+          <h5 class="card-title">Your Nick Name Is</h5>
+          <h3 class="card-text"><b>{{item.Nick_Name}}</b></h3>
+        </div>
+      {% endfor %}
+      </div>
+</body>
+</html>
